@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OnlineMobileShop.Entity.Mobile>
+
+@{
+    ViewBag.Title = "MobileDetails";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+
+}
+
+<head>
+    <style>
+        #table{
+            border-spacing: 20px;
+            padding:15px;
+        }
+    </style>
+</head>
+
+<h2>MobileDetails</h2>
+
+<table>
+    <tr>
+        <td>Brand </td>
+        <td>Model </td>
+        <td>Battery </td>
+        <td>RAM</td>
+        <td>ROM</td>
+        <td>Price </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Brand</td>
+            <td>@item.Model</td>
+            <td>@item.Battery</td>
+            <td>@item.RAM</td>
+            <td>@item.ROM</td>
+            <td>@item.Price</td>
+            <td>@Html.ActionLink("Edit","Edit",new { id=item.MobileID})</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = item.MobileID })</td>
+        </tr>
+       
+    }
+    <tr>
+        @Html.ActionLink("Add New Product", "Create")
+    </tr>
+</table>
+

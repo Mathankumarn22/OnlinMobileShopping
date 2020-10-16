@@ -1,0 +1,84 @@
+﻿@model OnlineMobileShop.Models.AddMobiles
+
+@{
+    ViewBag.Title = "AddMobiles";
+}
+
+@Html.ActionLink("Add new details", "Create")
+<head>
+    <style>
+        #table {
+            border-spacing: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Mobile", FormMethod.Post))
+{
+    <table>
+
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.Brand)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model => Model.BrandID, TempData["brand"] as SelectList,"select brand")
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.Model)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Model)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Battery)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Battery)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.RAM)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.RAM)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.ROM)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.ROM)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Price)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Price)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.ActionLink("Back", "DisplayDetails")
+            </td>
+            <td>
+                <input type="submit" id="=submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+

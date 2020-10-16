@@ -1,0 +1,20 @@
+﻿@model OnlineMobileShop.Models.Brand
+
+@{
+    ViewBag.Title = "AddBrand";
+}
+
+<h2>AddBrand</h2>
+@using (Html.BeginForm("AddBrand", "Mobile", FormMethod.Post))
+{
+    <div>
+        
+        <div>
+            @Html.DisplayNameFor(Model=>Model.BrandName)
+            @Html.TextBoxFor(Model=>Model.BrandName)
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </div>
+}

@@ -1,0 +1,10 @@
+﻿.header {
+    box-sizing: border-box;
+    font-family: Calibri;
+    background-color: cadetblue;
+    color: white;
+}
+
+.headerText {
+    text-align: center;
+}

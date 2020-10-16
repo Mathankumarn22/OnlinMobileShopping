@@ -1,0 +1,83 @@
+﻿@model OnlineMobileShop.Models.SignUp
+
+@{
+    ViewBag.Title = "SignUp";
+}
+<center>
+    
+        <h2>SignUp</h2>
+        @if (ViewBag.Message != null)
+        {
+            Response.Write(ViewBag.Message);
+        }
+        @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+        {
+
+            <table align="center" cellspacing="10" cellpadding="10" style="font-family:Calibri;background-color:dimgrey;border:groove;color:white">
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Name)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.Name, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.PhoneNumber, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.PhoneNumber)
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        @Html.LabelFor(Model => Model.Gender)
+                    </td>
+                    <td>
+                        @Html.EnumDropDownListFor(Model => Model.Gender, "--Select gender--", htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.Gender)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.MailID)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.MailID, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.MailID)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.Password)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(Model => Model.Password, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(Model => Model.ConfirmPassword)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(Model => Model.ConfirmPassword, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
+                        @Html.ValidationMessageFor(Model => Model.ConfirmPassword)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.AntiForgeryToken()
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        }
+   
+    </center>
+ 

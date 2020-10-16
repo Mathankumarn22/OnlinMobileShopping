@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+<center>
+    <h2>Display</h2>
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                MailID
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                ConfirmPassword
+            </th>
+        </tr>
+        @foreach (OnlineMobileShop.Entity.Account account in Model)
+        {
+            <tr>
+                <td>
+                    @account.Name
+                </td>
+                <td>
+                    @account.PhoneNumber
+                </td>
+                <td>
+                    @account.Gender
+                </td>
+                <td>
+                    @account.MailID
+                </td>
+                <td>
+                   @account.Password
+                </td>
+                <td>
+                    @account.ConfirmPassword
+                </td>
+            </tr>
+        }
+    </table>
+</center>

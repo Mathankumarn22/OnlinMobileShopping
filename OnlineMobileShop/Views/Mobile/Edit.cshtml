@@ -1,0 +1,70 @@
+﻿@model OnlineMobileShop.Models.AddMobiles
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(Model => Model.MobileID)
+    <table>
+        <tr>
+            <td>@Html.DisplayFor(Model=>Model.Brand)</td>
+            <td>
+                @Html.DropDownListFor(Model => Model.BrandID, ViewBag.Brand as SelectList)
+                @Html.ValidationMessageFor(Model=>Model.BrandID)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model=>Model.Model)</td>
+            <td>
+                @Html.EditorFor(Model => Model.Model)
+                @Html.ValidationMessageFor(Model=>Model.Model)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(Model => Model.Battery)</td>
+            <td>
+                @Html.EditorFor(Model => Model.Battery)
+                @Html.ValidationMessageFor(Model => Model.Battery)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(Model => Model.RAM)</td>
+            <td>
+                @Html.EditorFor(Model => Model.RAM)
+                @Html.ValidationMessageFor(Model => Model.RAM)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(Model => Model.ROM)</td>
+            <td>
+                @Html.EditorFor(Model => Model.ROM)
+                @Html.ValidationMessageFor(Model => Model.ROM)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(Model => Model.Price)</td>
+            <td>
+                @Html.EditorFor(Model => Model.Price)
+                @Html.ValidationMessageFor(Model => Model.Price)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Cancel", "DisplayDetails")
+            </td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+
+    </table>
+}
+
+
+
+
+

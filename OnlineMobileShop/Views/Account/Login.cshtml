@@ -1,0 +1,34 @@
+﻿@model OnlineMobileShop.Models.LogIn
+
+@{
+    ViewBag.Title = "LogIn";
+}
+<h2>Login</h2>
+@using(Html.BeginForm("LogIn","Account",FormMethod.Post))
+    {
+<table>
+    <tr>
+        <td>
+            @Html.Label("Mail-ID")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.MailID)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Password")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.Password)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="login" />
+        </td>
+    </tr>
+</table>
+    }
+
+
